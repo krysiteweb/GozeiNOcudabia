@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Um cantinho fofo 💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      color: #a52c67;
+      background: linear-gradient(135deg, #ffe1ef, #ffc2dc, #fff0f7);
+    }
+
+    .heart {
+      position: fixed;
+      color: rgba(255, 82, 155, 0.35);
+      font-size: 30px;
+      animation: flutuar 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .h1 { top: 10%; left: 12%; }
+    .h2 { top: 18%; right: 14%; font-size: 38px; }
+    .h3 { bottom: 12%; left: 17%; font-size: 34px; }
+    .h4 { bottom: 15%; right: 12%; }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+      }
+      50% {
+        transform: translateY(-18px) rotate(8deg);
+      }
+    }
+
+    .card {
+      width: min(90%, 440px);
+      padding: 42px 28px;
+      text-align: center;
+      border: 2px solid white;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 18px 50px rgba(205, 69, 132, 0.18);
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .icon {
+      font-size: 55px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 15px 28px;
+      color: white;
+      background: linear-gradient(135deg, #ff69a6, #ed3e88);
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(237, 62, 136, 0.28);
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    #surpresa {
+      display: none;
+      margin-top: 25px;
+      animation: aparecer 0.65s ease both;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .rodape {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #c56b94;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="heart h1">♡</div>
+  <div class="heart h2">💗</div>
+  <div class="heart h3">♡</div>
+  <div class="heart h4">💖</div>
+
+  <main class="card">
+    <div class="icon">🎀</div>
+
+    <h1>Um mimo pra você!</h1>
+
+    <p>
+      Preparei uma coisinha fofa...<br>
+      Quer descobrir? 💕
+    </p>
+
+    <button id="botao" onclick="mostrarTexto()">
+      Clique aqui 💗
+    </button>
+
+    <section id="surpresa">
+      <div class="icon">💌</div>
+
+      <h2>Manda foto do peito por favor </h2>
+
+      <p>
+      eu imploro
+      </p>
+    </section>
+
+    <div class="rodape">
+      
+    </div>
+  </main>
+
+  <script>
+    function mostrarTexto() {
+      document.getElementById("surpresa").style.display = "block";
+
+      document.getElementById("botao").textContent =
+        "Surpresa revelada! 💕";
+
+      document.getElementById("botao").disabled = true;
+      document.getElementById("botao").style.opacity = "0.8";
+    }
+  </script>
+
+</body>
+</html>
